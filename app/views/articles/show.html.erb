@@ -1,11 +1,17 @@
-<h1>Wikinimous</h1>
-
-<h2><%= @article.title %></h2>
-
-<p><%= @article.content %></p>
+<nav class="navbar navbar-light bg-light">
+  <span class="text-color:grey">Wikinimous</span>
+</nav>
 
 
-<br>
-<%= link_to "Edit this article", edit_article_path  %>
-<hr>
-<%= link_to "Back to list", articles_path %>
+<div class="p-3">
+  <span class="d-inline-flex">
+  <h2><%= @article.title %></h2>
+  <div class="btn ">
+  <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_article_path  %>
+  <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, article_path(@article), method: :delete  %>
+  </div>
+  </span>
+  <p><%= @article.content %></p>
+  <hr>
+  <%= link_to "Back to list", articles_path %>
+</div>
